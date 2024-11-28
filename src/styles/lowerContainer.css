@@ -1,0 +1,24 @@
+/* lower container style */
+
+
+.lower__container {
+    background-color: #232f3e;
+    color: white;
+  }
+  
+  .lower__container ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+  }
+  
+  .lower__container ul li {
+    padding: 8px;
+  }
+  
+  .lower__container ul li:first-child {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+  }
+  

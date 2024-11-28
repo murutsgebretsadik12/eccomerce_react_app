@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    justify-content: space-between; /* Pushes the subtotal to the right */
+    align-items: flex-start;       /* Aligns both sections to the top */
+    gap: 20px;                     /* Adds space between the main content and subtotal */
+    margin-top: 20px;
+    height: auto;                  /* Ensures the container only takes up the necessary height */
+}
+
+.container img {
+    width: 100px !important; /* Scales the image appropriately */
+}
+
+.container div:not(.subtotal) {
+    height: auto !important
+}
+
+.cart__container {
+    flex: 2; /* Takes up more space compared to the subtotal */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stacks content vertically in the cart section */
+}
+
+.cart__container h2,
+.cart__container h3 {
+    padding: 10px;
+}
+
+.cart__container hr {
+    margin: 10px;
+}
+
+.subtotal {
+    flex: 0 0 300px; /* Fixed width for the subtotal box */
+    padding: 20px;
+    height: auto; 
+    display: flex;
+    flex-direction: column; /* Ensures the content inside is stacked */
+    gap: 20px;
+    align-items: flex-start; /* Aligns content to the left inside the box */
+    border: 1px solid rgb(193, 193, 193);
+    background-color: rgb(242, 241, 241);
+    border-radius: 5px;
+    margin-left: auto; /* Pushes the subtotal to the far right */
+    margin-top: 0;     /* Resets any unnecessary margin */
+    align-self: flex-start; /* Forces the subtotal to align at the top */
+    position: static;       /* Ensures no override from `sticky` or `relative` */
+}
+
+.subtotal a {
+    text-align: center;
+    width: 100%;
+    border: none;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.subtotal a:hover {
+    background: var(--primary-shade);
+}
+
+.subtotal > div,
+.subtotal span {
+    display: flex;
+    gap: 20px;
+}
+
+@media screen and (max-width: 968px) {
+    .container {
+        flex-direction: column; /* Switches to vertical stacking for smaller screens */
+        align-items: center;    /* Centers items for mobile screens */
+        gap: 20px;
+    }
+
+    .subtotal {
+        width: 100%; /* Makes the subtotal full width on mobile */
+        margin-left: 0; /* Removes left margin for centering */
+        align-items: center; /* Centers subtotal content */
+        position: relative; /* Disables any special positioning */
+        align-self: center; /* Centers it in the column layout */
+    }
+}
